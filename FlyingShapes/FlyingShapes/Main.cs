@@ -1,4 +1,8 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Globalization;
+using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 using FlyingShapes.Logic;
 using FlyingShapes.Models;
@@ -192,6 +196,45 @@ namespace FlyingShapes
                 });
             });
             mainPicBox.Invalidate();
+        }
+       
+        private void button1_Click(object sender, EventArgs e)
+        {
+            langLabel.Visible = false;
+            langListBox.Visible = true;
+        }
+
+        private void langListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var selectedLanguageIndex = langListBox.SelectedIndex;
+
+            switch (selectedLanguageIndex)
+            {
+                case 0:
+                    ChangeLanguage("en");
+                    break;
+                case 1:
+                    ChangeLanguage("ru");
+                    break;
+                case 2:
+                    ChangeLanguage("uk");
+                    break;
+                default:
+                    ChangeLanguage("en");
+                    break;
+            }
+
+            langLabel.Visible = true;
+            langListBox.Visible = false;
+        }
+
+        private void ChangeLanguage(string lang)
+        {
+            foreach (Control c in this.Controls)
+            {
+                var resources = new ComponentResourceManager(GetType());
+                resources.ApplyResources(c, c.Name, new CultureInfo(lang));
+            }
         }
     }
 }

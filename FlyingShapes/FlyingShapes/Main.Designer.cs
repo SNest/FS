@@ -46,22 +46,26 @@
             this.saveBtn = new System.Windows.Forms.Button();
             this.loadBtn = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.saveLabel = new System.Windows.Forms.Label();
+            this.loadLabel = new System.Windows.Forms.Label();
+            this.squareLabel = new System.Windows.Forms.Label();
+            this.triangleLabel = new System.Windows.Forms.Label();
+            this.circleLabel = new System.Windows.Forms.Label();
+            this.fBackwardlabel = new System.Windows.Forms.Label();
+            this.backwardLabel = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.forwardLabel = new System.Windows.Forms.Label();
+            this.fForwardLabel = new System.Windows.Forms.Label();
+            this.pauseLabel = new System.Windows.Forms.Label();
+            this.deleteLabel = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.langListBox = new System.Windows.Forms.ListBox();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.langLabel = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.mainPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -75,8 +79,8 @@
             // 
             // pauseBtn
             // 
-            this.pauseBtn.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.pauseBtn, "pauseBtn");
+            this.pauseBtn.FlatAppearance.BorderSize = 0;
             this.pauseBtn.Name = "pauseBtn";
             this.pauseBtn.UseVisualStyleBackColor = true;
             this.pauseBtn.Click += new System.EventHandler(this.pauseBtn_Click);
@@ -97,24 +101,24 @@
             // 
             // addRectangleBtn
             // 
-            this.addRectangleBtn.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.addRectangleBtn, "addRectangleBtn");
+            this.addRectangleBtn.FlatAppearance.BorderSize = 0;
             this.addRectangleBtn.Name = "addRectangleBtn";
             this.addRectangleBtn.UseVisualStyleBackColor = true;
             this.addRectangleBtn.Click += new System.EventHandler(this.addRectangleBtn_Click);
             // 
             // addTriangleBtn
             // 
-            this.addTriangleBtn.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.addTriangleBtn, "addTriangleBtn");
+            this.addTriangleBtn.FlatAppearance.BorderSize = 0;
             this.addTriangleBtn.Name = "addTriangleBtn";
             this.addTriangleBtn.UseVisualStyleBackColor = true;
             this.addTriangleBtn.Click += new System.EventHandler(this.addTriangleBtn_Click);
             // 
             // addCircleBtn
             // 
-            this.addCircleBtn.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.addCircleBtn, "addCircleBtn");
+            this.addCircleBtn.FlatAppearance.BorderSize = 0;
             this.addCircleBtn.Name = "addCircleBtn";
             this.addCircleBtn.UseVisualStyleBackColor = true;
             this.addCircleBtn.Click += new System.EventHandler(this.addCircleBtn_Click);
@@ -134,130 +138,125 @@
             // 
             // playBtn
             // 
+            resources.ApplyResources(this.playBtn, "playBtn");
             this.playBtn.BackColor = System.Drawing.Color.Transparent;
             this.playBtn.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.playBtn, "playBtn");
             this.playBtn.Name = "playBtn";
             this.playBtn.UseVisualStyleBackColor = false;
             this.playBtn.Click += new System.EventHandler(this.playBtn_Click);
             // 
             // forwardBtn
             // 
-            this.forwardBtn.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.forwardBtn, "forwardBtn");
+            this.forwardBtn.FlatAppearance.BorderSize = 0;
             this.forwardBtn.Name = "forwardBtn";
             this.forwardBtn.UseVisualStyleBackColor = true;
             this.forwardBtn.Click += new System.EventHandler(this.forwardBtn_Click);
             // 
             // backwardBtn
             // 
-            this.backwardBtn.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.backwardBtn, "backwardBtn");
+            this.backwardBtn.FlatAppearance.BorderSize = 0;
             this.backwardBtn.Name = "backwardBtn";
             this.backwardBtn.UseVisualStyleBackColor = true;
             this.backwardBtn.Click += new System.EventHandler(this.backwardBtn_Click);
             // 
             // fastBackwardBtn
             // 
-            this.fastBackwardBtn.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.fastBackwardBtn, "fastBackwardBtn");
+            this.fastBackwardBtn.FlatAppearance.BorderSize = 0;
             this.fastBackwardBtn.Name = "fastBackwardBtn";
             this.fastBackwardBtn.UseVisualStyleBackColor = true;
             this.fastBackwardBtn.Click += new System.EventHandler(this.fastBackwardBtn_Click);
             // 
             // fastForwardBtn
             // 
-            this.fastForwardBtn.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.fastForwardBtn, "fastForwardBtn");
+            this.fastForwardBtn.FlatAppearance.BorderSize = 0;
             this.fastForwardBtn.Name = "fastForwardBtn";
             this.fastForwardBtn.UseVisualStyleBackColor = true;
             this.fastForwardBtn.Click += new System.EventHandler(this.fastForwardBtn_Click);
             // 
             // saveBtn
             // 
-            this.saveBtn.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.saveBtn, "saveBtn");
+            this.saveBtn.FlatAppearance.BorderSize = 0;
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // loadBtn
             // 
-            this.loadBtn.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.loadBtn, "loadBtn");
+            this.loadBtn.FlatAppearance.BorderSize = 0;
             this.loadBtn.Name = "loadBtn";
             this.loadBtn.UseVisualStyleBackColor = true;
             this.loadBtn.Click += new System.EventHandler(this.loadBtn_Click);
             // 
-            // label1
+            // saveLabel
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
+            resources.ApplyResources(this.saveLabel, "saveLabel");
+            this.saveLabel.Name = "saveLabel";
             // 
-            // label2
+            // loadLabel
             // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
+            resources.ApplyResources(this.loadLabel, "loadLabel");
+            this.loadLabel.Name = "loadLabel";
             // 
-            // label3
+            // squareLabel
             // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.Name = "label3";
+            resources.ApplyResources(this.squareLabel, "squareLabel");
+            this.squareLabel.Name = "squareLabel";
             // 
-            // label4
+            // triangleLabel
             // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.Name = "label4";
+            resources.ApplyResources(this.triangleLabel, "triangleLabel");
+            this.triangleLabel.Name = "triangleLabel";
             // 
-            // label5
+            // circleLabel
             // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.Name = "label5";
+            resources.ApplyResources(this.circleLabel, "circleLabel");
+            this.circleLabel.Name = "circleLabel";
             // 
-            // label6
+            // fBackwardlabel
             // 
-            resources.ApplyResources(this.label6, "label6");
-            this.label6.Name = "label6";
+            resources.ApplyResources(this.fBackwardlabel, "fBackwardlabel");
+            this.fBackwardlabel.Name = "fBackwardlabel";
             // 
-            // label7
+            // backwardLabel
             // 
-            resources.ApplyResources(this.label7, "label7");
-            this.label7.Name = "label7";
+            resources.ApplyResources(this.backwardLabel, "backwardLabel");
+            this.backwardLabel.Name = "backwardLabel";
             // 
             // label8
             // 
             resources.ApplyResources(this.label8, "label8");
             this.label8.Name = "label8";
             // 
-            // label9
+            // forwardLabel
             // 
-            resources.ApplyResources(this.label9, "label9");
-            this.label9.Name = "label9";
+            resources.ApplyResources(this.forwardLabel, "forwardLabel");
+            this.forwardLabel.Name = "forwardLabel";
             // 
-            // label10
+            // fForwardLabel
             // 
-            resources.ApplyResources(this.label10, "label10");
-            this.label10.Name = "label10";
+            resources.ApplyResources(this.fForwardLabel, "fForwardLabel");
+            this.fForwardLabel.Name = "fForwardLabel";
             // 
-            // label11
+            // pauseLabel
             // 
-            resources.ApplyResources(this.label11, "label11");
-            this.label11.Name = "label11";
+            resources.ApplyResources(this.pauseLabel, "pauseLabel");
+            this.pauseLabel.Name = "pauseLabel";
             // 
-            // label12
+            // deleteLabel
             // 
-            resources.ApplyResources(this.label12, "label12");
-            this.label12.Name = "label12";
-            // 
-            // flowLayoutPanel1
-            // 
-            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            resources.ApplyResources(this.deleteLabel, "deleteLabel");
+            this.deleteLabel.Name = "deleteLabel";
             // 
             // flowLayoutPanel2
             // 
-            this.flowLayoutPanel2.BackColor = System.Drawing.SystemColors.Control;
             resources.ApplyResources(this.flowLayoutPanel2, "flowLayoutPanel2");
+            this.flowLayoutPanel2.BackColor = System.Drawing.SystemColors.Control;
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             // 
             // flowLayoutPanel3
@@ -265,22 +264,62 @@
             resources.ApplyResources(this.flowLayoutPanel3, "flowLayoutPanel3");
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // langListBox
+            // 
+            resources.ApplyResources(this.langListBox, "langListBox");
+            this.langListBox.BackColor = System.Drawing.SystemColors.Control;
+            this.langListBox.FormattingEnabled = true;
+            this.langListBox.Items.AddRange(new object[] {
+            resources.GetString("langListBox.Items"),
+            resources.GetString("langListBox.Items1"),
+            resources.GetString("langListBox.Items2")});
+            this.langListBox.Name = "langListBox";
+            this.langListBox.SelectedIndexChanged += new System.EventHandler(this.langListBox_SelectedIndexChanged);
+            // 
+            // flowLayoutPanel4
+            // 
+            resources.ApplyResources(this.flowLayoutPanel4, "flowLayoutPanel4");
+            this.flowLayoutPanel4.BackColor = System.Drawing.SystemColors.Control;
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            // 
+            // langLabel
+            // 
+            resources.ApplyResources(this.langLabel, "langLabel");
+            this.langLabel.Name = "langLabel";
+            // 
+            // groupBox1
+            // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.TabStop = false;
+            // 
             // Main
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.langListBox);
+            this.Controls.Add(this.langLabel);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.deleteLabel);
+            this.Controls.Add(this.pauseLabel);
+            this.Controls.Add(this.fForwardLabel);
+            this.Controls.Add(this.forwardLabel);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.backwardLabel);
+            this.Controls.Add(this.fBackwardlabel);
+            this.Controls.Add(this.circleLabel);
+            this.Controls.Add(this.triangleLabel);
+            this.Controls.Add(this.squareLabel);
+            this.Controls.Add(this.loadLabel);
+            this.Controls.Add(this.saveLabel);
             this.Controls.Add(this.loadBtn);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.fastForwardBtn);
@@ -295,9 +334,10 @@
             this.Controls.Add(this.mainListView);
             this.Controls.Add(this.pauseBtn);
             this.Controls.Add(this.mainPicBox);
-            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.flowLayoutPanel3);
+            this.Controls.Add(this.flowLayoutPanel4);
+            this.Controls.Add(this.groupBox1);
             this.Name = "Main";
             ((System.ComponentModel.ISupportInitialize)(this.mainPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
@@ -324,22 +364,26 @@
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.Button loadBtn;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label saveLabel;
+        private System.Windows.Forms.Label loadLabel;
+        private System.Windows.Forms.Label squareLabel;
+        private System.Windows.Forms.Label triangleLabel;
+        private System.Windows.Forms.Label circleLabel;
+        private System.Windows.Forms.Label fBackwardlabel;
+        private System.Windows.Forms.Label backwardLabel;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label forwardLabel;
+        private System.Windows.Forms.Label fForwardLabel;
+        private System.Windows.Forms.Label pauseLabel;
+        private System.Windows.Forms.Label deleteLabel;
         private System.Windows.Forms.BindingSource bindingSource1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox langListBox;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
+        private System.Windows.Forms.Label langLabel;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
