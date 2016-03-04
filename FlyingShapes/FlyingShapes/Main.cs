@@ -1,8 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Globalization;
-using System.Linq;
-using System.Threading;
 using System.Windows.Forms;
 using FlyingShapes.Logic;
 using FlyingShapes.Models;
@@ -162,12 +160,16 @@ namespace FlyingShapes
             if (playBtn.Visible && !pauseBtn.Visible)
             {
                 playBtn.Visible = false;
+                playLabel.Visible = false;
                 pauseBtn.Visible = true;
+                pauseLabel.Visible = true;
             }
             else
             {
                 playBtn.Visible = true;
+                playLabel.Visible = true;
                 pauseBtn.Visible = false;
+                pauseLabel.Visible = false;
             }
         }
 
@@ -230,10 +232,10 @@ namespace FlyingShapes
 
         private void ChangeLanguage(string lang)
         {
-            foreach (Control c in this.Controls)
+            foreach (Control control in Controls)
             {
                 var resources = new ComponentResourceManager(GetType());
-                resources.ApplyResources(c, c.Name, new CultureInfo(lang));
+                resources.ApplyResources(control, control.Name, new CultureInfo(lang));
             }
         }
     }

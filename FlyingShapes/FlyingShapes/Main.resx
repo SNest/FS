@@ -130,10 +130,6 @@
   <data name="&gt;&gt;clearBtn.Name" xml:space="preserve">
     <value>clearBtn</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="flowLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>355, 12</value>
-  </data>
   <data name="&gt;&gt;backwardLabel.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
@@ -147,20 +143,17 @@
   <data name="backwardBtn.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
+  <data name="shapeGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
   <data name="&gt;&gt;langLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;loadBtn.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>35</value>
-  </data>
   <data name="&gt;&gt;bindingSource1.Name" xml:space="preserve">
     <value>bindingSource1</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;loadBtn.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -171,9 +164,7 @@
   <data name="&gt;&gt;pauseBtn.Name" xml:space="preserve">
     <value>pauseBtn</value>
   </data>
-  <data name="&gt;&gt;circleLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="fastForwardBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGOfPtRkwAAACBjSFJNAACH
@@ -260,9 +251,6 @@
   <data name="saveLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 13</value>
   </data>
-  <data name="&gt;&gt;label8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="clearBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>33, 33</value>
   </data>
@@ -342,7 +330,7 @@
 </value>
   </data>
   <data name="forwardBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>608, 15</value>
+    <value>608, 28</value>
   </data>
   <data name="&gt;&gt;fastBackwardBtn.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -428,17 +416,11 @@
         LU5gwGsE7ZW5G+LponNp8pYd9i8+GQj+Bf37n6EoFlRXAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="flowLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
   <data name="&gt;&gt;mainListView.Name" xml:space="preserve">
     <value>mainListView</value>
   </data>
-  <data name="flowLayoutPanel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 64</value>
-  </data>
   <data name="pauseLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>536, 51</value>
+    <value>535, 64</value>
   </data>
   <data name="addCircleBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -505,23 +487,26 @@
         DAwMYNKUJ7g4oeQvlRoMb2Rc9NQAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 64</value>
+  <data name="&gt;&gt;circleLabel.ZOrder" xml:space="preserve">
+    <value>10</value>
   </data>
   <data name="&gt;&gt;saveBtn.Name" xml:space="preserve">
     <value>saveBtn</value>
   </data>
-  <data name="&gt;&gt;backgroundWorker1.Type" xml:space="preserve">
-    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="addRectangleBtn.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
+  </data>
+  <data name="fileGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 12</value>
+  </data>
+  <data name="fileGroupBox.Text" xml:space="preserve">
+    <value>Files</value>
   </data>
   <data name="pauseLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>7</value>
+  <data name="playLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>539, 64</value>
   </data>
   <data name="fBackwardlabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -539,22 +524,22 @@
     <value>$this</value>
   </data>
   <data name="fastBackwardBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>383, 15</value>
+    <value>383, 28</value>
   </data>
   <data name="loadLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>75, 51</value>
+    <value>75, 64</value>
   </data>
   <data name="&gt;&gt;button1.Name" xml:space="preserve">
     <value>button1</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel4.ZOrder" xml:space="preserve">
-    <value>31</value>
   </data>
   <data name="&gt;&gt;playBtn.Name" xml:space="preserve">
     <value>playBtn</value>
   </data>
   <data name="pauseBtn.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
+  </data>
+  <data name="&gt;&gt;pauseBtn.ZOrder" xml:space="preserve">
+    <value>27</value>
   </data>
   <data name="&gt;&gt;triangleLabel.Name" xml:space="preserve">
     <value>triangleLabel</value>
@@ -647,6 +632,9 @@
         RuwfYqBOzkP1+Wv4D7F158tRrbpIAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="shapeGroupBox.Text" xml:space="preserve">
+    <value>Shapes</value>
+  </data>
   <data name="squareLabel.Text" xml:space="preserve">
     <value>Square</value>
   </data>
@@ -662,8 +650,11 @@
   <data name="&gt;&gt;langListBox.Name" xml:space="preserve">
     <value>langListBox</value>
   </data>
-  <data name="&gt;&gt;mainPicBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="circleLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;forwardBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="loadBtn.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -761,11 +752,8 @@
   <data name="&gt;&gt;loadLabel.Name" xml:space="preserve">
     <value>loadLabel</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanel3.Name" xml:space="preserve">
-    <value>flowLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;forwardBtn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="playLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 13</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
@@ -788,14 +776,14 @@
   <data name="saveBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;deleteLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="mainListView.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Montserrat Black, 10pt</value>
   </data>
   <data name="&gt;&gt;fForwardLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="triangleLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>217, 51</value>
+    <value>217, 64</value>
   </data>
   <data name="backwardLabel.Text" xml:space="preserve">
     <value>Backward</value>
@@ -803,17 +791,17 @@
   <data name="&gt;&gt;squareLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;circleLabel.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
   <data name="loadLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="saveBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 15</value>
+  <data name="fastBackwardBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 33</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanel3.ZOrder" xml:space="preserve">
-    <value>30</value>
+  <data name="saveBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 28</value>
+  </data>
+  <data name="&gt;&gt;shapeGroupBox.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1009,8 +997,8 @@
   <data name="&gt;&gt;clearBtn.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanel2.Name" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
+  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 33</value>
   </data>
   <data name="&gt;&gt;addRectangleBtn.Name" xml:space="preserve">
     <value>addRectangleBtn</value>
@@ -1036,11 +1024,11 @@
   <data name="&gt;&gt;backwardBtn.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="&gt;&gt;saveLabel.Name" xml:space="preserve">
     <value>saveLabel</value>
+  </data>
+  <data name="&gt;&gt;playLabel.Name" xml:space="preserve">
+    <value>playLabel</value>
   </data>
   <data name="clearBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1118,14 +1106,14 @@
   <data name="fForwardLabel.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
   </data>
-  <data name="&gt;&gt;pauseBtn.ZOrder" xml:space="preserve">
-    <value>27</value>
+  <data name="&gt;&gt;fileGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;playbeckGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;langLabel.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="backwardBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>33, 33</value>
@@ -1136,29 +1124,26 @@
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>840, 500</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanel3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;forwardLabel.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;label8.Name" xml:space="preserve">
-    <value>label8</value>
+  <data name="&gt;&gt;playLabel.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="&gt;&gt;forwardLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="playbeckGroupBox.Text" xml:space="preserve">
+    <value>Playbeck</value>
   </data>
   <data name="loadBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>73, 15</value>
+    <value>73, 28</value>
   </data>
   <data name="&gt;&gt;forwardBtn.Name" xml:space="preserve">
     <value>forwardBtn</value>
   </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
   </data>
-  <data name="circleLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>294, 51</value>
+  <data name="langListBox.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
   </data>
   <data name="addRectangleBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1173,19 +1158,19 @@
     <value>circleLabel</value>
   </data>
   <data name="saveLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 51</value>
+    <value>14, 64</value>
   </data>
   <data name="&gt;&gt;saveBtn.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="deleteLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 13</value>
+  <data name="&gt;&gt;playLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="saveLabel.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanel2.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;deleteLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="triangleLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1196,8 +1181,8 @@
   <data name="clearBtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>137, 7</value>
+  <data name="addTriangleBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 28</value>
   </data>
   <data name="forwardLabel.Text" xml:space="preserve">
     <value>Forward</value>
@@ -1205,11 +1190,11 @@
   <data name="backwardLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="flowLayoutPanel3.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
   <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="playbeckGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
   </data>
   <data name="&gt;&gt;fastForwardBtn.ZOrder" xml:space="preserve">
     <value>17</value>
@@ -1223,8 +1208,8 @@
   <data name="&gt;&gt;forwardBtn.ZOrder" xml:space="preserve">
     <value>20</value>
   </data>
-  <data name="fastBackwardBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 33</value>
+  <data name="&gt;&gt;forwardLabel.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;clearBtn.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1235,8 +1220,8 @@
   <data name="&gt;&gt;mainPicBox.Name" xml:space="preserve">
     <value>mainPicBox</value>
   </data>
-  <data name="&gt;&gt;saveLabel.ZOrder" xml:space="preserve">
-    <value>14</value>
+  <data name="langLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
   </data>
   <data name="addRectangleBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>33, 33</value>
@@ -1244,8 +1229,8 @@
   <data name="&gt;&gt;fBackwardlabel.Name" xml:space="preserve">
     <value>fBackwardlabel</value>
   </data>
-  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>27, 13</value>
+  <data name="&gt;&gt;shapeGroupBox.ZOrder" xml:space="preserve">
+    <value>29</value>
   </data>
   <data name="langListBox.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1259,8 +1244,14 @@
   <data name="&gt;&gt;triangleLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="flowLayoutPanel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 12</value>
+  <data name="playbeckGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>353, 12</value>
+  </data>
+  <data name="&gt;&gt;fileGroupBox.Name" xml:space="preserve">
+    <value>fileGroupBox</value>
+  </data>
+  <data name="&gt;&gt;mainPicBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="langLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1268,8 +1259,8 @@
   <data name="&gt;&gt;addTriangleBtn.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="circleLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>797, 28</value>
   </data>
   <data name="&gt;&gt;addCircleBtn.ZOrder" xml:space="preserve">
     <value>23</value>
@@ -1283,8 +1274,8 @@
   <data name="&gt;&gt;pauseLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;fForwardLabel.Name" xml:space="preserve">
-    <value>fForwardLabel</value>
+  <data name="playLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
   </data>
   <data name="&gt;&gt;clearBtn.ZOrder" xml:space="preserve">
     <value>22</value>
@@ -1293,19 +1284,16 @@
     <value>$this</value>
   </data>
   <data name="fBackwardlabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>362, 51</value>
-  </data>
-  <data name="flowLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>387, 64</value>
+    <value>362, 64</value>
   </data>
   <data name="&gt;&gt;deleteLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Play</value>
-  </data>
   <data name="fForwardLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="&gt;&gt;shapeGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="saveBtn.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1322,11 +1310,11 @@
   <data name="&gt;&gt;addCircleBtn.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="addRectangleBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>147, 15</value>
+  <data name="&gt;&gt;playbeckGroupBox.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="label8.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
+  <data name="addRectangleBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>147, 28</value>
   </data>
   <data name="circleLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1340,14 +1328,11 @@
   <data name="fForwardLabel.Text" xml:space="preserve">
     <value>Fast forward</value>
   </data>
-  <data name="flowLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 64</value>
+  <data name="&gt;&gt;circleLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;forwardLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel4.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="fastForwardBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>683, 28</value>
   </data>
   <data name="&gt;&gt;button1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1359,7 +1344,7 @@
     <value>$this</value>
   </data>
   <data name="clearBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>909, 15</value>
+    <value>909, 28</value>
   </data>
   <data name="&gt;&gt;saveLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1371,10 +1356,13 @@
     <value>loadBtn</value>
   </data>
   <data name="langListBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>794, 48</value>
+    <value>794, 61</value>
   </data>
   <data name="forwardLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>605, 51</value>
+    <value>605, 64</value>
+  </data>
+  <data name="playLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;deleteLabel.Name" xml:space="preserve">
     <value>deleteLabel</value>
@@ -1382,8 +1370,8 @@
   <data name="loadLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="flowLayoutPanel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>779, 12</value>
+  <data name="shapeGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>137, 12</value>
   </data>
   <data name="addTriangleBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>33, 33</value>
@@ -1478,9 +1466,6 @@
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Main</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanel4.Name" xml:space="preserve">
-    <value>flowLayoutPanel4</value>
-  </data>
   <data name="clearBtn.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -1490,14 +1475,8 @@
   <data name="&gt;&gt;saveBtn.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>797, 15</value>
-  </data>
   <data name="saveBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>33, 33</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>shapes</value>
   </data>
   <data name="&gt;&gt;backwardLabel.Name" xml:space="preserve">
     <value>backwardLabel</value>
@@ -1508,17 +1487,20 @@
   <data name="squareLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="mainListView.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Montserrat Black, 10pt</value>
+  <data name="&gt;&gt;fileGroupBox.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="deleteLabel.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
   </data>
-  <data name="forwardLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+  <data name="circleLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>294, 64</value>
   </data>
   <data name="&gt;&gt;backwardLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;playbeckGroupBox.ZOrder" xml:space="preserve">
+    <value>31</value>
   </data>
   <data name="mainListView.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 443</value>
@@ -1529,14 +1511,17 @@
   <data name="&gt;&gt;fastForwardBtn.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="fileGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 73</value>
+  </data>
   <data name="&gt;&gt;loadLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;addTriangleBtn.ZOrder" xml:space="preserve">
     <value>24</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanel3.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="deleteLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 13</value>
   </data>
   <data name="&gt;&gt;loadBtn.ZOrder" xml:space="preserve">
     <value>15</value>
@@ -1604,32 +1589,23 @@
         o6y0ZKW8qnqlsWf2lo7d/ktfURQ807/89wDqF7wi0JvjdYRsAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="langLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>34</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="flowLayoutPanel4.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
+  <data name="pauseBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 33</value>
   </data>
   <data name="&gt;&gt;addTriangleBtn.Name" xml:space="preserve">
     <value>addTriangleBtn</value>
   </data>
-  <data name="saveLabel.Text" xml:space="preserve">
-    <value>Save</value>
+  <data name="&gt;&gt;forwardBtn.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="playBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>33, 33</value>
   </data>
-  <data name="addTriangleBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>220, 15</value>
-  </data>
-  <data name="fastForwardBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>683, 15</value>
-  </data>
   <data name="loadLabel.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
+  </data>
+  <data name="&gt;&gt;playLabel.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="&gt;&gt;fForwardLabel.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1675,20 +1651,17 @@
   <data name="loadLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 13</value>
   </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 33</value>
+  <data name="&gt;&gt;backgroundWorker1.Type" xml:space="preserve">
+    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="langListBox.TabIndex" type="System.Int32, mscorlib">
-    <value>33</value>
+  <data name="&gt;&gt;playbeckGroupBox.Name" xml:space="preserve">
+    <value>playbeckGroupBox</value>
   </data>
   <data name="langListBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 43</value>
   </data>
   <data name="langLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>539, 51</value>
   </data>
   <data name="&gt;&gt;addCircleBtn.Name" xml:space="preserve">
     <value>addCircleBtn</value>
@@ -1827,11 +1800,11 @@
         IN8AHBnxjEQ9aKcAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button1.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
-  </data>
   <data name="addCircleBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>293, 15</value>
+    <value>293, 28</value>
+  </data>
+  <data name="&gt;&gt;shapeGroupBox.Name" xml:space="preserve">
+    <value>shapeGroupBox</value>
   </data>
   <data name="&gt;&gt;pauseLabel.ZOrder" xml:space="preserve">
     <value>4</value>
@@ -1842,11 +1815,14 @@
   <data name="&gt;&gt;fastBackwardBtn.ZOrder" xml:space="preserve">
     <value>18</value>
   </data>
+  <data name="shapeGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 73</value>
+  </data>
   <data name="&gt;&gt;backwardBtn.ZOrder" xml:space="preserve">
     <value>19</value>
   </data>
   <data name="deleteLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>909, 51</value>
+    <value>909, 64</value>
   </data>
   <data name="forwardBtn.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1854,8 +1830,17 @@
   <data name="&gt;&gt;saveLabel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="fForwardLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>669, 64</value>
+  </data>
   <data name="pauseLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 13</value>
+  </data>
+  <data name="&gt;&gt;fileGroupBox.ZOrder" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="fileGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
   </data>
   <data name="&gt;&gt;triangleLabel.ZOrder" xml:space="preserve">
     <value>11</value>
@@ -1869,8 +1854,8 @@
   <data name="&gt;&gt;langLabel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;forwardBtn.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;saveLabel.ZOrder" xml:space="preserve">
+    <value>14</value>
   </data>
   <data name="&gt;&gt;fBackwardlabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1879,13 +1864,16 @@
     <value>968, 561</value>
   </data>
   <data name="backwardLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>449, 51</value>
+    <value>449, 64</value>
   </data>
   <data name="pauseBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>533, 15</value>
+    <value>533, 28</value>
   </data>
   <data name="deleteLabel.Text" xml:space="preserve">
     <value>Delete</value>
+  </data>
+  <data name="&gt;&gt;forwardLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;squareLabel.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1905,41 +1893,38 @@
   <data name="fastBackwardBtn.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanel4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
   <data name="triangleLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;fForwardLabel.Name" xml:space="preserve">
+    <value>fForwardLabel</value>
   </data>
   <data name="&gt;&gt;playBtn.ZOrder" xml:space="preserve">
     <value>21</value>
   </data>
-  <data name="pauseBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 33</value>
+  <data name="saveLabel.Text" xml:space="preserve">
+    <value>Save</value>
   </data>
   <data name="&gt;&gt;langLabel.Name" xml:space="preserve">
     <value>langLabel</value>
   </data>
-  <data name="label8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;mainTimer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="langListBox.Items2" xml:space="preserve">
     <value>Ukrainian</value>
   </data>
   <data name="playBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>533, 15</value>
+    <value>533, 28</value>
   </data>
   <data name="langLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>774, 51</value>
+    <value>774, 64</value>
   </data>
   <data name="squareLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>144, 51</value>
+    <value>144, 64</value>
   </data>
   <data name="backwardBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>458, 15</value>
+    <value>458, 28</value>
   </data>
   <data name="fForwardLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1953,8 +1938,8 @@
   <data name="mainListView.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 106</value>
   </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>32</value>
+  <data name="playLabel.Text" xml:space="preserve">
+    <value>Play</value>
   </data>
   <data name="backwardLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1971,14 +1956,14 @@
   <data name="mainPicBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>834, 458</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanel2.ZOrder" xml:space="preserve">
-    <value>29</value>
+  <data name="playbeckGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>390, 73</value>
   </data>
-  <data name="fForwardLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>669, 51</value>
+  <data name="forwardLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
   </data>
-  <data name="&gt;&gt;mainTimer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="playLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="pauseBtn.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>

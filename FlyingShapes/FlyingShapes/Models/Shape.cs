@@ -6,13 +6,13 @@ using System.Xml.Serialization;
 
 namespace FlyingShapes.Models
 {
-    [Serializable, DataContract, 
-        XmlInclude(typeof(Rectangle)), 
-        XmlInclude(typeof(Circle)), 
-        XmlInclude(typeof(Triangle)),
-        KnownType(typeof(Rectangle)),
-        KnownType(typeof(Circle)),
-        KnownType(typeof(Triangle))]
+    [Serializable, DataContract,
+     XmlInclude(typeof (Rectangle)),
+     XmlInclude(typeof (Circle)),
+     XmlInclude(typeof (Triangle)),
+     KnownType(typeof (Rectangle)),
+     KnownType(typeof (Circle)),
+     KnownType(typeof (Triangle))]
     public abstract class Shape
     {
         private const int MinSpeed = 1;
@@ -20,8 +20,12 @@ namespace FlyingShapes.Models
         private readonly Random random = new Random();
         private readonly double xRatio;
         private readonly double yRatio;
+        [NonSerialized]
+        protected Pen pen;
+        [NonSerialized]
+        protected Brush brush;
 
-        public Shape()
+        protected Shape()
         {
             var size = random.Next(10, 100);
             Width += size;
@@ -35,39 +39,50 @@ namespace FlyingShapes.Models
 
             if (XSpeed >= 0)
             {
-                XSpeed = (int)(xRatio * Speed);
+                XSpeed = (int) (xRatio*Speed);
             }
             else
             {
-                XSpeed = -(int)(xRatio * Speed);
+                XSpeed = -(int) (xRatio*Speed);
             }
             if (YSpeed >= 0)
             {
-                YSpeed = (int)(yRatio * Speed);
+                YSpeed = (int) (yRatio*Speed);
             }
             else
             {
-                YSpeed = -(int)(yRatio * Speed);
+                YSpeed = -(int) (yRatio*Speed);
             }
 
             Color = GetRandomColor();
+            pen = new Pen(Color);
+            brush = new SolidBrush(Color);
         }
+
         [DataMember]
         public int XCoord { get; set; }
+
         [DataMember]
         public int YCoord { get; set; }
+
         [DataMember]
         public int Height { get; set; }
+
         [DataMember]
         public int Width { get; set; }
+
         [DataMember]
         public int Speed { get; set; }
+
         [DataMember]
         public int XSpeed { get; set; }
+
         [DataMember]
         public int YSpeed { get; set; }
+
         [DataMember]
         public bool IsFilled { get; set; }
+
         [DataMember, XmlIgnore]
         public Color Color { get; set; }
 
@@ -78,9 +93,12 @@ namespace FlyingShapes.Models
             set { Color = Color.FromArgb(value); }
         }
 
+       
+
         public abstract void Draw(Graphics graphics);
 
         public abstract void Move(PictureBox pictureBox);
+
 
         public Color GetRandomColor()
         {
@@ -95,21 +113,26 @@ namespace FlyingShapes.Models
 
                 if (XSpeed >= 0)
                 {
-                    XSpeed = (int)(xRatio * Speed);
+                    XSpeed = (int) (xRatio*Speed);
                 }
                 else
                 {
-                    XSpeed = -(int)(xRatio * Speed);
+                    XSpeed = -(int) (xRatio*Speed);
                 }
                 if (YSpeed >= 0)
                 {
-                    YSpeed = (int)(yRatio * Speed);
+                    YSpeed = (int) (yRatio*Speed);
                 }
                 else
                 {
-                    YSpeed = -(int)(yRatio * Speed);
+                    YSpeed = -(int) (yRatio*Speed);
                 }
             }
+        }
+
+        public void ReverseDirection()
+        {
+            Speed = -Speed;
         }
 
         public override string ToString()

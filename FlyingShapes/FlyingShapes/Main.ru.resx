@@ -946,7 +946,7 @@
     <value>NoControl</value>
   </data>
   <data name="saveLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 51</value>
+    <value>1, 64</value>
   </data>
   <data name="saveLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 13</value>
@@ -955,7 +955,7 @@
     <value>Сохранить</value>
   </data>
   <data name="loadLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>62, 51</value>
+    <value>62, 64</value>
   </data>
   <data name="loadLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 13</value>
@@ -964,7 +964,7 @@
     <value>Загрузить</value>
   </data>
   <data name="squareLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>140, 51</value>
+    <value>140, 64</value>
   </data>
   <data name="squareLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 13</value>
@@ -973,7 +973,7 @@
     <value>Квадрат</value>
   </data>
   <data name="triangleLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>205, 51</value>
+    <value>205, 64</value>
   </data>
   <data name="triangleLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 13</value>
@@ -982,7 +982,7 @@
     <value>Треугольник</value>
   </data>
   <data name="circleLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>281, 51</value>
+    <value>279, 64</value>
   </data>
   <data name="circleLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>69, 13</value>
@@ -991,7 +991,7 @@
     <value>Окружность</value>
   </data>
   <data name="fBackwardlabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>355, 51</value>
+    <value>355, 64</value>
   </data>
   <data name="fBackwardlabel.Text" xml:space="preserve">
     <value>Очень медленно</value>
@@ -1002,17 +1002,29 @@
   <data name="backwardLabel.Text" xml:space="preserve">
     <value>Медленно</value>
   </data>
-  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>536, 51</value>
+  <data name="playLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>533, 64</value>
+  </data>
+  <data name="playLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 13</value>
+  </data>
+  <data name="playLabel.Text" xml:space="preserve">
+    <value>Играть</value>
   </data>
   <data name="forwardLabel.Text" xml:space="preserve">
     <value>Быстро</value>
+  </data>
+  <data name="fForwardLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>664, 64</value>
   </data>
   <data name="fForwardLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 13</value>
   </data>
   <data name="fForwardLabel.Text" xml:space="preserve">
     <value>Очень быстро</value>
+  </data>
+  <data name="pauseLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>533, 64</value>
   </data>
   <data name="pauseLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 13</value>
@@ -1021,7 +1033,7 @@
     <value>Пауза</value>
   </data>
   <data name="deleteLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>905, 51</value>
+    <value>905, 64</value>
   </data>
   <data name="deleteLabel.Text" xml:space="preserve">
     <value>Удалить</value>
@@ -1103,6 +1115,18 @@
   </data>
   <data name="langLabel.Text" xml:space="preserve">
     <value>Изменить язык</value>
+  </data>
+  <data name="shapeGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 73</value>
+  </data>
+  <data name="shapeGroupBox.Text" xml:space="preserve">
+    <value>Фигуры</value>
+  </data>
+  <data name="fileGroupBox.Text" xml:space="preserve">
+    <value>Файлы</value>
+  </data>
+  <data name="playbeckGroupBox.Text" xml:space="preserve">
+    <value>Воспроизведение</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

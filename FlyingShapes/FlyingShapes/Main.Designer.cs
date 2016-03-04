@@ -53,19 +53,18 @@
             this.circleLabel = new System.Windows.Forms.Label();
             this.fBackwardlabel = new System.Windows.Forms.Label();
             this.backwardLabel = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.playLabel = new System.Windows.Forms.Label();
             this.forwardLabel = new System.Windows.Forms.Label();
             this.fForwardLabel = new System.Windows.Forms.Label();
             this.pauseLabel = new System.Windows.Forms.Label();
             this.deleteLabel = new System.Windows.Forms.Label();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.langListBox = new System.Windows.Forms.ListBox();
-            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.langLabel = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.shapeGroupBox = new System.Windows.Forms.GroupBox();
+            this.fileGroupBox = new System.Windows.Forms.GroupBox();
+            this.playbeckGroupBox = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.mainPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -228,10 +227,10 @@
             resources.ApplyResources(this.backwardLabel, "backwardLabel");
             this.backwardLabel.Name = "backwardLabel";
             // 
-            // label8
+            // playLabel
             // 
-            resources.ApplyResources(this.label8, "label8");
-            this.label8.Name = "label8";
+            resources.ApplyResources(this.playLabel, "playLabel");
+            this.playLabel.Name = "playLabel";
             // 
             // forwardLabel
             // 
@@ -253,17 +252,6 @@
             resources.ApplyResources(this.deleteLabel, "deleteLabel");
             this.deleteLabel.Name = "deleteLabel";
             // 
-            // flowLayoutPanel2
-            // 
-            resources.ApplyResources(this.flowLayoutPanel2, "flowLayoutPanel2");
-            this.flowLayoutPanel2.BackColor = System.Drawing.SystemColors.Control;
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            // 
-            // flowLayoutPanel3
-            // 
-            resources.ApplyResources(this.flowLayoutPanel3, "flowLayoutPanel3");
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            // 
             // button1
             // 
             resources.ApplyResources(this.button1, "button1");
@@ -284,22 +272,28 @@
             this.langListBox.Name = "langListBox";
             this.langListBox.SelectedIndexChanged += new System.EventHandler(this.langListBox_SelectedIndexChanged);
             // 
-            // flowLayoutPanel4
-            // 
-            resources.ApplyResources(this.flowLayoutPanel4, "flowLayoutPanel4");
-            this.flowLayoutPanel4.BackColor = System.Drawing.SystemColors.Control;
-            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            // 
             // langLabel
             // 
             resources.ApplyResources(this.langLabel, "langLabel");
             this.langLabel.Name = "langLabel";
             // 
-            // groupBox1
+            // shapeGroupBox
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.TabStop = false;
+            resources.ApplyResources(this.shapeGroupBox, "shapeGroupBox");
+            this.shapeGroupBox.Name = "shapeGroupBox";
+            this.shapeGroupBox.TabStop = false;
+            // 
+            // fileGroupBox
+            // 
+            resources.ApplyResources(this.fileGroupBox, "fileGroupBox");
+            this.fileGroupBox.Name = "fileGroupBox";
+            this.fileGroupBox.TabStop = false;
+            // 
+            // playbeckGroupBox
+            // 
+            resources.ApplyResources(this.playbeckGroupBox, "playbeckGroupBox");
+            this.playbeckGroupBox.Name = "playbeckGroupBox";
+            this.playbeckGroupBox.TabStop = false;
             // 
             // Main
             // 
@@ -312,7 +306,7 @@
             this.Controls.Add(this.pauseLabel);
             this.Controls.Add(this.fForwardLabel);
             this.Controls.Add(this.forwardLabel);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.playLabel);
             this.Controls.Add(this.backwardLabel);
             this.Controls.Add(this.fBackwardlabel);
             this.Controls.Add(this.circleLabel);
@@ -334,10 +328,10 @@
             this.Controls.Add(this.mainListView);
             this.Controls.Add(this.pauseBtn);
             this.Controls.Add(this.mainPicBox);
-            this.Controls.Add(this.flowLayoutPanel2);
-            this.Controls.Add(this.flowLayoutPanel3);
-            this.Controls.Add(this.flowLayoutPanel4);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.shapeGroupBox);
+            this.Controls.Add(this.fileGroupBox);
+            this.Controls.Add(this.playbeckGroupBox);
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Name = "Main";
             ((System.ComponentModel.ISupportInitialize)(this.mainPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
@@ -371,19 +365,18 @@
         private System.Windows.Forms.Label circleLabel;
         private System.Windows.Forms.Label fBackwardlabel;
         private System.Windows.Forms.Label backwardLabel;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label playLabel;
         private System.Windows.Forms.Label forwardLabel;
         private System.Windows.Forms.Label fForwardLabel;
         private System.Windows.Forms.Label pauseLabel;
         private System.Windows.Forms.Label deleteLabel;
         private System.Windows.Forms.BindingSource bindingSource1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListBox langListBox;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.Label langLabel;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox shapeGroupBox;
+        private System.Windows.Forms.GroupBox fileGroupBox;
+        private System.Windows.Forms.GroupBox playbeckGroupBox;
     }
 }
 
