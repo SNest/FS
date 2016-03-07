@@ -9,15 +9,15 @@ namespace FlyingShapes.Logic
 {
     public static class ShapeSerializer
     {
-        private static readonly BinaryFormatter binaryFormatter = new BinaryFormatter();
-        private static readonly XmlSerializer xmlFormatter = new XmlSerializer(typeof(List<Shape>));
-        private static readonly DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(List<Shape>));
+        private static readonly BinaryFormatter BinaryFormatter = new BinaryFormatter();
+        private static readonly XmlSerializer XmlFormatter = new XmlSerializer(typeof(List<Shape>));
+        private static readonly DataContractJsonSerializer JsonFormatter = new DataContractJsonSerializer(typeof(List<Shape>));
 
         public static void SerializeToBinary(List<Shape> shapes)
         {
             using (var fileStream = new FileStream("shapes.dat", FileMode.OpenOrCreate))
             {
-                binaryFormatter.Serialize(fileStream, shapes);
+                BinaryFormatter.Serialize(fileStream, shapes);
             }
         }
 
@@ -25,7 +25,7 @@ namespace FlyingShapes.Logic
         {
             using (var fileStream = new FileStream("shapes.xml", FileMode.OpenOrCreate))
             {
-                xmlFormatter.Serialize(fileStream, shapes);
+                XmlFormatter.Serialize(fileStream, shapes);
             }
         }
 
@@ -33,7 +33,7 @@ namespace FlyingShapes.Logic
         {
             using (var fileStream = new FileStream("shapes.json", FileMode.OpenOrCreate))
             {
-                jsonFormatter.WriteObject(fileStream, shapes);
+                JsonFormatter.WriteObject(fileStream, shapes);
             }
         }
 
@@ -41,7 +41,7 @@ namespace FlyingShapes.Logic
         {
             using (var fileStream = new FileStream("shapes.dat", FileMode.OpenOrCreate))
             {
-                var shapes = (List<Shape>)binaryFormatter.Deserialize(fileStream);
+                var shapes = (List<Shape>)BinaryFormatter.Deserialize(fileStream);
                 return shapes;
             }
         }
@@ -50,7 +50,7 @@ namespace FlyingShapes.Logic
         {
             using (var fileStream = new FileStream("shapes.xml", FileMode.OpenOrCreate))
             {
-                var shapes = (List<Shape>)xmlFormatter.Deserialize(fileStream);
+                var shapes = (List<Shape>)XmlFormatter.Deserialize(fileStream);
                 return shapes;
             }
         }
@@ -59,7 +59,7 @@ namespace FlyingShapes.Logic
         {
             using (var fileStream = new FileStream("shapes.json", FileMode.OpenOrCreate))
             {
-                var shapes = (List<Shape>)jsonFormatter.ReadObject(fileStream);
+                var shapes = (List<Shape>)JsonFormatter.ReadObject(fileStream);
                 return shapes;
             }
         }

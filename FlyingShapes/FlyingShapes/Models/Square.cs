@@ -6,13 +6,8 @@ using System.Windows.Forms;
 namespace FlyingShapes.Models
 {
     [Serializable, DataContract]
-    public class Rectangle : Shape
+    public class Square : Shape
     {
-        public Rectangle()
-        {
-            
-        }
-
         public override void Draw(Graphics graphics)
         {
             if (IsFilled)

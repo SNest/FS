@@ -1,17 +1,15 @@
-﻿using System.Collections.Generic;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-using FlyingShapes.Models;
-using Rectangle = System.Drawing.Rectangle;
-
-namespace FlyingShapes.Logic
+﻿namespace FlyingShapes.Logic
 {
+    using System.Collections.Generic;
+    using System.Drawing;
+    using System.Linq;
+    using System.Text;
+    using System.Windows.Forms;
+
+    using FlyingShapes.Models;
+
     public class ShapeManager
     {
-        private Rectangle shapeRectangle1;
-        private Rectangle shapeRectangle2;
-
         public ShapeManager()
         {
             ShapeList = new List<Shape>();
@@ -24,47 +22,6 @@ namespace FlyingShapes.Logic
             ShapeList.Add(shape);
         }
 
-        public void RemoveShape(Shape shape)
-        {
-            ShapeList.Remove(shape);
-        }
-
-        public void DrawAllShapes(Graphics graphics)
-        {
-            foreach (var shape in ShapeList)
-            {
-                shape.Draw(graphics);
-            }
-        }
-
-        public void MoveAllShapes(PictureBox pictureBox)
-        {
-            foreach (var shape1 in ShapeList)
-            {
-                shapeRectangle1 = new Rectangle(
-                    shape1.XCoord, shape1.YCoord, shape1.Width, shape1.Height);
-
-                foreach (var shape2 in ShapeList)
-                {
-                    shapeRectangle2 = new Rectangle(
-                        shape2.XCoord, shape2.YCoord, shape2.Width, shape2.Height);
-
-                    if (!ReferenceEquals(shape1, shape2) && IsIntersected())
-                    {
-                        shape1.ReverseDirection();
-                        shape2.ReverseDirection();
-                    }
-                }
-
-                shape1.Move(pictureBox);
-            }
-        }
-
-        public bool IsIntersected()
-        {
-            return shapeRectangle1.IntersectsWith(shapeRectangle2);
-        }
-
         public void ChangeAllShapesSpeed(int speedStep)
         {
             foreach (var shape in ShapeList)
@@ -73,14 +30,12 @@ namespace FlyingShapes.Logic
             }
         }
 
-        public void RemoveAllShapes()
+        public void DrawAllShapes(Graphics graphics)
         {
-            ShapeList.Clear();
-        }
-
-        public void RemoveAllShapesByType(Shape shape)
-        {
-            ShapeList.RemoveAll(f => f.GetType().Equals(shape.GetType()));
+            foreach (var shape in ShapeList)
+            {
+                shape.Draw(graphics);
+            }
         }
 
         public string GetAllShapesInfo()
@@ -92,6 +47,56 @@ namespace FlyingShapes.Logic
             }
 
             return allfigures.ToString();
+        }
+
+        public Shape GetShape(string type, int number)
+        {
+            var result =
+                ShapeList.Where(shape => shape.GetType().Name == type.Substring(0, type.Length - 1))
+                    .ToList()
+                    .ElementAt(number);
+            return result;
+        }
+
+        public void MoveAllShapes(PictureBox pictureBox)
+        {
+            foreach (var shape1 in ShapeList)
+            {
+                foreach (var shape2 in ShapeList)
+                {
+                    var isEqual = ReferenceEquals(shape1, shape2);
+                    var isIntersects = shape1.GetShapeBounds().IntersectsWith(shape2.GetShapeBounds());
+                    var isIntersectsAllowSpeed =
+                        shape1.GetShapeBoundAllowSpeed().IntersectsWith(shape2.GetShapeBoundAllowSpeed());
+
+                    if (!isEqual && isIntersectsAllowSpeed && !isIntersects)
+                    {
+                        break;
+                    }
+
+                    shape1.ReverseDirection();
+                    shape2.ReverseDirection();
+                }
+
+                shape1.Move(pictureBox);
+            }
+        }
+
+        public void RemoveAllShapes()
+        {
+            ShapeList.Clear();
+        }
+
+        public void RemoveShapesByType(string type)
+        {
+            ShapeList.Where(shape => shape.GetType().Name == type.Substring(0, type.Length - 1))
+                .ToList()
+                .ForEach(innerShape => ShapeList.Remove(innerShape));
+        }
+
+        public void RemoveShape(Shape shape)
+        {
+            ShapeList.Remove(shape);
         }
     }
 }

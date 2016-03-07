@@ -1,38 +1,52 @@
-﻿using System;
-using System.Drawing;
-using System.Runtime.Serialization;
-using System.Windows.Forms;
-
-namespace FlyingShapes.Models
+﻿namespace FlyingShapes.Models
 {
+    using System;
+    using System.Drawing;
+    using System.Runtime.Serialization;
+    using System.Windows.Forms;
+
     [Serializable, DataContract]
     public class Circle : Shape
     {
+        private readonly int halfOfWidth;
+
         public Circle()
         {
-            XCoord = XCoord + Width / 2;
-            YCoord = YCoord + Width / 2;
+            halfOfWidth = Width / 2;
+            XCoord = XCoord + halfOfWidth;
+            YCoord = YCoord + halfOfWidth;
         }
 
         public override void Draw(Graphics graphics)
         {
             if (IsFilled)
             {
-                graphics.FillEllipse(new SolidBrush(Color), XCoord - Width / 2, YCoord - Width / 2, Width, Width);
+                graphics.FillEllipse(
+                    new SolidBrush(Color), 
+                    XCoord - halfOfWidth, 
+                    YCoord - halfOfWidth, 
+                    Width, 
+                    Width);
             }
             else
             {
-                graphics.DrawEllipse(new Pen(Color, 3f), XCoord - Width / 2, YCoord - Width / 2, Width, Width);
+                graphics.DrawEllipse(
+                    new Pen(Color, 3f), 
+                    XCoord - halfOfWidth, 
+                    YCoord - halfOfWidth, 
+                    Width, 
+                    Width);
             }
         }
 
         public override void Move(PictureBox pictureBox)
         {
-            if (XCoord + Width / 2 >= pictureBox.Width || XCoord <= 0 + Width / 2)
+            if (XCoord + halfOfWidth >= pictureBox.Width || XCoord <= 0 + halfOfWidth)
             {
                 XSpeed = -XSpeed;
             }
-            if (YCoord + Width / 2 >= pictureBox.Height || YCoord <= 0 + Width / 2)
+
+            if (YCoord + halfOfWidth >= pictureBox.Height || YCoord <= 0 + halfOfWidth)
             {
                 YSpeed = -YSpeed;
             }
