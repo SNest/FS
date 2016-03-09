@@ -20,8 +20,8 @@
         {
             points = new[]
                         {
-                             new Point(XCoord + (Width / 2), YCoord),
-                             new Point(XCoord + Width, YCoord + Height),
+                             new Point(XCoord + (Width / 2), YCoord), 
+                             new Point(XCoord + Width, YCoord + Height), 
                              new Point(XCoord, YCoord + Height)
                          };
 
@@ -49,14 +49,14 @@
 
         public override void Move(PictureBox pictureBox)
         {
-            if (YCoord + Height >= pictureBox.Height || YCoord <= 0)
-            {
-                YSpeed = -YSpeed;
-            }
-
             if (XCoord + Width >= pictureBox.Width || XCoord <= 0)
             {
                 XSpeed = -XSpeed;
+            }
+
+            if (YCoord + Height >= pictureBox.Height || YCoord <= 0)
+            {
+                YSpeed = -YSpeed;
             }
 
             XCoord += XSpeed;

@@ -33,8 +33,7 @@
             var size = random.Next(10, 100);
             Width += size;
             Height += size;
-            XCoord = random.Next(100);
-            YCoord = random.Next(100);
+           
 
             Speed = random.Next(2, 10);
             xRatio = random.NextDouble();
@@ -153,6 +152,45 @@
                 }
             }
         }
+        public void ChangeSpeedXY(int xSpeed, int ySpeed)
+        {
+
+            //if (XSpeed >= 0)
+            //{
+            //    XSpeed = (XSpeed - xSpeed) / 2;
+            //}
+            //else
+            //{
+            //    XSpeed = -(XSpeed - xSpeed) / 2;
+            //}
+
+            //if (YSpeed >= 0)
+            //{
+            //    YSpeed = (YSpeed - ySpeed) / 2;
+            //}
+            //else
+            //{
+            //    YSpeed = -(YSpeed - ySpeed) / 2;
+            //}
+
+            if (XSpeed >= 0)
+            {
+                XSpeed = -xSpeed;
+            }
+            else
+            {
+                XSpeed = xSpeed;
+            }
+
+            if (YSpeed >= 0)
+            {
+                YSpeed = -ySpeed;
+            }
+            else
+            {
+                YSpeed = ySpeed;
+            }
+        }
 
         public abstract void Draw(Graphics graphics);
 
@@ -161,26 +199,28 @@
             return Color.FromArgb(random.Next(0, 255), random.Next(0, 255), random.Next(0, 255));
         }
 
-        public System.Drawing.Rectangle GetShapeBoundAllowSpeed()
+        public Rectangle GetShapeBoundAllowSpeed()
         {
-            return new System.Drawing.Rectangle(XCoord + XSpeed, YCoord + YSpeed, Width, Height);
+            return new Rectangle(XCoord + XSpeed, YCoord + YSpeed, Width, Height);
         }
 
-        public System.Drawing.Rectangle GetShapeBounds()
+        public Rectangle GetShapeBounds()
         {
-            return new System.Drawing.Rectangle(XCoord, YCoord, Width, Height);
+            return new Rectangle(XCoord, YCoord, Width, Height);
         }
 
-        public System.Drawing.Rectangle GetShapeBounds(int x)
+        public Rectangle GetShapeBounds(int x)
         {
-            return new System.Drawing.Rectangle(XCoord + x, YCoord + x, Width, Height);
+            return new Rectangle(XCoord + x, YCoord + x, Width, Height);
         }
 
         public abstract void Move(PictureBox pictureBox);
 
         public void ReverseDirection()
         {
-            Speed = -Speed;
+            //Speed = -shape.Speed;
+            XSpeed = -XSpeed;
+            YSpeed = -YSpeed;
         }
 
         public override string ToString()

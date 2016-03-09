@@ -8,45 +8,42 @@
     [Serializable, DataContract]
     public class Circle : Shape
     {
-        private readonly int halfOfWidth;
-
         public Circle()
         {
-            halfOfWidth = Width / 2;
-            XCoord = XCoord + halfOfWidth;
-            YCoord = YCoord + halfOfWidth;
+            Pen = new Pen(Color, 3f);
+            Brush = new SolidBrush(Color);
         }
 
         public override void Draw(Graphics graphics)
         {
             if (IsFilled)
             {
-                graphics.FillEllipse(
-                    new SolidBrush(Color), 
-                    XCoord - halfOfWidth, 
-                    YCoord - halfOfWidth, 
-                    Width, 
-                    Width);
+                if (Brush == null)
+                {
+                    Brush = new SolidBrush(Color);
+                }
+
+                graphics.FillEllipse(Brush, XCoord, YCoord, Width, Width);
             }
             else
             {
-                graphics.DrawEllipse(
-                    new Pen(Color, 3f), 
-                    XCoord - halfOfWidth, 
-                    YCoord - halfOfWidth, 
-                    Width, 
-                    Width);
+                if (Pen == null)
+                {
+                    Pen = new Pen(Color, 3f);
+                }
+
+                graphics.DrawEllipse(Pen, XCoord, YCoord, Width, Width);
             }
         }
 
         public override void Move(PictureBox pictureBox)
         {
-            if (XCoord + halfOfWidth >= pictureBox.Width || XCoord <= 0 + halfOfWidth)
+            if (XCoord + Width >= pictureBox.Width || XCoord <= 0)
             {
                 XSpeed = -XSpeed;
             }
 
-            if (YCoord + halfOfWidth >= pictureBox.Height || YCoord <= 0 + halfOfWidth)
+            if (YCoord + Height >= pictureBox.Height || YCoord <= 0)
             {
                 YSpeed = -YSpeed;
             }

@@ -14,11 +14,17 @@
     {
         private readonly ShapeManager shapeManager;
 
+        private readonly TreeNode shapeNode;
+
         public Main()
         {
             InitializeComponent();
             shapeManager = new ShapeManager();
             mainTimer.Start();
+
+            shapeNode = mainTreeView.Nodes[0];
+
+            mainTreeView.ExpandAll();
         }
 
         private void AddCircleBtnClick(object sender, EventArgs e)
@@ -35,11 +41,9 @@
 
         private void AddShape<T>(T shape) where T : Shape
         {
-            shapeManager.AddShape(shape);
+            shapeManager.AddShape(shape, mainPicBox);
             mainPicBox.Invalidate();
-
             AddShapeToTreeView(shape);
-
             mainTreeView.ExpandAll();
         }
 
@@ -55,9 +59,12 @@
 
             var node = new TreeNode(Text = shape.GetType().Name)
                            {
-                               ForeColor = shape.Color,
+                               ForeColor = shape.Color, 
                                NodeFont =
-                                   new Font("Microsoft Sans Serif", 8, FontStyle.Regular)
+                                   new Font(
+                                   "Microsoft Sans Serif", 
+                                   8, 
+                                   FontStyle.Regular)
                            };
 
             switch (shape.GetType().Name)
@@ -85,15 +92,15 @@
         private void BackwardBtnClick(object sender, EventArgs e)
         {
             mainTimer.Start();
-            shapeManager.ChangeAllShapesSpeed(-5);
+            shapeManager.ChangeShapesSpeed(-5);
             ShowPauseButton();
         }
 
         private void ChangeLanguage(string lang)
         {
+            var resources = new ComponentResourceManager(GetType());
             foreach (Control control in Controls)
             {
-                var resources = new ComponentResourceManager(GetType());
                 resources.ApplyResources(control, control.Name, new CultureInfo(lang));
             }
         }
@@ -101,68 +108,45 @@
         private void ClearBtnClick(object sender, EventArgs e)
         {
             var selectedNode = mainTreeView.SelectedNode;
-            if (mainTreeView.Nodes.Count != 0)
+            
+            if (selectedNode == null || shapeNode.IsSelected)
             {
-                if (mainTreeView.Nodes[0].IsSelected)
-                {
-                    shapeManager.RemoveAllShapes();
-                    foreach (var node in mainTreeView.Nodes[0].Nodes.Cast<TreeNode>())
-                    {
-                        node.Nodes.Clear();
-                    }
-                }
-                else
-                {
-                    if (mainTreeView.Nodes[0].Nodes.Contains(selectedNode))
-                    {
-                        var node = mainTreeView.Nodes[0].Nodes.Cast<TreeNode>()
-                            .Single(n => n.IsSelected);
-                        shapeManager.RemoveShapesByType(node.Text);
-                        node.Nodes.Clear();
-                    }
-                    else
-                    {
-                        var shape = shapeManager.GetShape(selectedNode.Parent.Text, selectedNode.Index);
-                        shapeManager.RemoveShape(shape);
-                        mainTreeView.Nodes.Remove(selectedNode);
-                    }
-                }
-
-                mainPicBox.Refresh();
+                shapeManager.RemoveShapes();
+                shapeNode.Nodes.Cast<TreeNode>().ToList().ForEach(n => n.Nodes.Clear());
             }
+            else if (shapeNode.Nodes.Contains(selectedNode))
+            {
+                shapeManager.RemoveShapes(selectedNode.Text);
+                selectedNode.Nodes.Clear();
+            }
+            else
+            {
+                var shape = shapeManager.GetShape(selectedNode.Parent.Text, selectedNode.Index);
+                shapeManager.RemoveShape(shape);
+                mainTreeView.Nodes.Remove(selectedNode);
+            }
+
+            mainPicBox.Refresh();
         }
 
         private void FastBackwardBtnClick(object sender, EventArgs e)
         {
             mainTimer.Start();
-            shapeManager.ChangeAllShapesSpeed(-10);
+            shapeManager.ChangeShapesSpeed(-10);
             ShowPauseButton();
         }
 
         private void FastForwardBtnClick(object sender, EventArgs e)
         {
             mainTimer.Start();
-            shapeManager.ChangeAllShapesSpeed(10);
+            shapeManager.ChangeShapesSpeed(10);
             ShowPauseButton();
-        }
-
-        private void FillSelectedShape()
-        {
-            var selectedNode = mainTreeView.SelectedNode;
-            if (selectedNode != null)
-            {
-                var shape = shapeManager.GetShape(selectedNode.Parent.Text, selectedNode.Index);
-
-                shapeManager.ShapeList.ForEach(s => s.IsFilled = false);
-                shapeManager.ShapeList.Find(s => s.Equals(shape)).IsFilled = true;
-                mainPicBox.Invalidate();
-            }
         }
 
         private void ForwardBtnClick(object sender, EventArgs e)
         {
             mainTimer.Start();
-            shapeManager.ChangeAllShapesSpeed(5);
+            shapeManager.ChangeShapesSpeed(5);
             ShowPauseButton();
         }
 
@@ -208,25 +192,14 @@
             mainPicBox.Invalidate();
         }
 
-        private void MainListViewMouseEnter(object sender, EventArgs e)
-        {
-            FillSelectedShape();
-        }
-
-        private void MainListViewMouseLeave(object sender, EventArgs e)
-        {
-            shapeManager.ShapeList.ForEach(shape => shape.IsFilled = false);
-            mainPicBox.Invalidate();
-        }
-
         private void MainPicBoxPaint(object sender, PaintEventArgs e)
         {
             if (!playBtn.Visible)
             {
-                shapeManager.MoveAllShapes(mainPicBox);
+                shapeManager.MoveShapes(mainPicBox);
             }
 
-            shapeManager.DrawAllShapes(e.Graphics);
+            shapeManager.DrawShapes(e.Graphics);
         }
 
         private void MainTimerTick(object sender, EventArgs e)
@@ -236,19 +209,26 @@
             pauseBtn.Visible = true;
         }
 
-        private void MainTreeViewNodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        private void MainTreeViewAfterSelect(object sender, TreeViewEventArgs e)
         {
             var selectedNode = mainTreeView.SelectedNode;
-            if (selectedNode?.Parent.Parent != null)
+            shapeManager.UnfillShapes();
+
+            if (shapeNode.IsSelected)
             {
-                FillSelectedShape();
+                shapeManager.FillShapes();
+            }
+            else if (shapeNode.Nodes.Contains(selectedNode))
+            {
+                shapeManager.FillShapes(selectedNode.Text);
             }
             else
             {
-                shapeManager.ShapeList.ForEach(s => s.IsFilled = false);
+                var shape = shapeManager.GetShape(selectedNode.Parent.Text, selectedNode.Index);
+                shapeManager.FillShape(shape);
             }
 
-            mainPicBox.Invalidate();
+            mainPicBox.Refresh();
         }
 
         private void PauseBtnClick(object sender, EventArgs e)

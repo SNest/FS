@@ -323,7 +323,9 @@
             this.mainTreeView.BackColor = System.Drawing.SystemColors.Control;
             this.mainTreeView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mainTreeView.Name = "mainTreeView";
-            this.mainTreeView.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.MainTreeViewNodeMouseClick);
+            this.mainTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            ((System.Windows.Forms.TreeNode)(resources.GetObject("mainTreeView.Nodes")))});
+            this.mainTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.MainTreeViewAfterSelect);
             // 
             // Main
             // 
