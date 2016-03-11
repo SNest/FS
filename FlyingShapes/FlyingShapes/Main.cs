@@ -5,6 +5,7 @@
     using System.Drawing;
     using System.Globalization;
     using System.Linq;
+    using System.Threading;
     using System.Windows.Forms;
 
     using FlyingShapes.Logic;
@@ -16,21 +17,47 @@
 
         private readonly TreeNode shapeNode;
 
+        private Thread myThread;
+
         public Main()
         {
-            InitializeComponent();
             shapeManager = new ShapeManager();
+            InitializeComponent();
             mainTimer.Start();
-
             shapeNode = mainTreeView.Nodes[0];
-
             mainTreeView.ExpandAll();
+            myThread = new Thread(MoveShapes);
+            myThread.Start();
+
+            while (!myThread.IsAlive)
+            {
+            }
         }
 
         private void AddCircleBtnClick(object sender, EventArgs e)
         {
             var circle = new Circle();
             AddShape(circle);
+        }
+
+        private void AddEventBtnClick(object sender, EventArgs e)
+        {
+            var selectedNode = mainTreeView.SelectedNode;
+
+            if (selectedNode == null | shapeNode.IsSelected)
+            {
+                shapeManager.AddKickEvent();
+            }
+            else if (shapeNode.Nodes.Contains(selectedNode))
+            {
+                var shapes = shapeManager.GetShapes(selectedNode.Text);
+                shapeManager.AddKickEvent(shapes);
+            }
+            else
+            {
+                var shape = shapeManager.GetShape(selectedNode.Parent.Text, selectedNode.Index);
+                shapeManager.AddKickEvent(shape);
+            }
         }
 
         private void AddRectangleBtnClick(object sender, EventArgs e)
@@ -49,13 +76,7 @@
 
         private void AddShapeToTreeView<T>(T shape) where T : Shape
         {
-            if (mainTreeView.Nodes.Count == 0)
-            {
-                mainTreeView.Nodes.Add(new TreeNode(Text = "Shapes"));
-                mainTreeView.Nodes[0].Nodes.Add(new TreeNode(Text = "Squares"));
-                mainTreeView.Nodes[0].Nodes.Add(new TreeNode(Text = "Triangles"));
-                mainTreeView.Nodes[0].Nodes.Add(new TreeNode(Text = "Circles"));
-            }
+            InitializeTreeView();
 
             var node = new TreeNode(Text = shape.GetType().Name)
                            {
@@ -108,22 +129,22 @@
         private void ClearBtnClick(object sender, EventArgs e)
         {
             var selectedNode = mainTreeView.SelectedNode;
-            
-            if (selectedNode == null || shapeNode.IsSelected)
+
+            if (selectedNode == null | shapeNode.IsSelected)
             {
-                shapeManager.RemoveShapes();
                 shapeNode.Nodes.Cast<TreeNode>().ToList().ForEach(n => n.Nodes.Clear());
+                shapeManager.RemoveShapes();
             }
             else if (shapeNode.Nodes.Contains(selectedNode))
             {
-                shapeManager.RemoveShapes(selectedNode.Text);
                 selectedNode.Nodes.Clear();
+                shapeManager.RemoveShapes(selectedNode.Text);
             }
             else
             {
                 var shape = shapeManager.GetShape(selectedNode.Parent.Text, selectedNode.Index);
-                shapeManager.RemoveShape(shape);
                 mainTreeView.Nodes.Remove(selectedNode);
+                shapeManager.RemoveShape(shape);
             }
 
             mainPicBox.Refresh();
@@ -148,6 +169,19 @@
             mainTimer.Start();
             shapeManager.ChangeShapesSpeed(5);
             ShowPauseButton();
+        }
+
+        private void InitializeTreeView()
+        {
+            if (mainTreeView.Nodes.Count == 0)
+            {
+                mainTreeView.Nodes.Add(new TreeNode("Shapes"));
+                mainTreeView.Nodes[0].Nodes.Add(new TreeNode("Squares"));
+                mainTreeView.Nodes[0].Nodes.Add(new TreeNode("Triangles"));
+                mainTreeView.Nodes[0].Nodes.Add(new TreeNode("Circles"));
+
+                mainTreeView.ExpandAll();
+            }
         }
 
         private void LangBtnClick(object sender, EventArgs e)
@@ -194,19 +228,12 @@
 
         private void MainPicBoxPaint(object sender, PaintEventArgs e)
         {
-            if (!playBtn.Visible)
-            {
-                shapeManager.MoveShapes(mainPicBox);
-            }
-
             shapeManager.DrawShapes(e.Graphics);
         }
 
         private void MainTimerTick(object sender, EventArgs e)
         {
             mainPicBox.Invalidate();
-            playBtn.Visible = false;
-            pauseBtn.Visible = true;
         }
 
         private void MainTreeViewAfterSelect(object sender, TreeViewEventArgs e)
@@ -214,7 +241,7 @@
             var selectedNode = mainTreeView.SelectedNode;
             shapeManager.UnfillShapes();
 
-            if (shapeNode.IsSelected)
+            if (selectedNode == null | shapeNode.IsSelected)
             {
                 shapeManager.FillShapes();
             }
@@ -231,16 +258,33 @@
             mainPicBox.Refresh();
         }
 
+        private void MoveShapes()
+        {
+            while (!playBtn.Visible)
+            {
+                shapeManager.MoveShapes(mainPicBox);
+                Thread.Sleep(10);
+            }
+        }
+
         private void PauseBtnClick(object sender, EventArgs e)
         {
             mainTimer.Stop();
-            ToglePlayButton();
+            ShowPlayButton();
+            myThread?.Abort();
         }
 
         private void PlayBtnClick(object sender, EventArgs e)
         {
+            myThread = new Thread(MoveShapes);
             mainTimer.Start();
-            ToglePlayButton();
+            ShowPauseButton();
+
+            myThread.Start();
+
+            while (!myThread.IsAlive)
+            {
+            }
         }
 
         private void SaveBtnClick(object sender, EventArgs e)
@@ -265,18 +309,6 @@
             playLabel.Visible = true;
             pauseBtn.Visible = false;
             pauseLabel.Visible = false;
-        }
-
-        private void ToglePlayButton()
-        {
-            if (playBtn.Visible && !pauseBtn.Visible)
-            {
-                ShowPauseButton();
-            }
-            else
-            {
-                ShowPlayButton();
-            }
         }
     }
 }

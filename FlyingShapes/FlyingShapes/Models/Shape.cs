@@ -2,11 +2,16 @@
 {
     using System;
     using System.Drawing;
+    using System.Media;
     using System.Runtime.Serialization;
+    using System.Threading;
     using System.Windows.Forms;
     using System.Xml.Serialization;
 
     using FlyingShapes.Interfaces;
+    using FlyingShapes.Logic;
+
+    using NLog;
 
     [Serializable, DataContract, XmlInclude(typeof(Square)), XmlInclude(typeof(Circle)), XmlInclude(typeof(Triangle)), 
      KnownType(typeof(Square)), KnownType(typeof(Circle)), KnownType(typeof(Triangle))]
@@ -16,11 +21,9 @@
 
         private const int MinSpeed = 1;
 
+        private static Logger logger;
+
         private readonly Random random = new Random();
-
-        private readonly double xRatio;
-
-        private readonly double yRatio;
 
         [NonSerialized]
         private SolidBrush brush;
@@ -28,12 +31,17 @@
         [NonSerialized]
         private Pen pen;
 
+        private double xRatio;
+
+        private double yRatio;
+
         protected Shape()
         {
+            logger = LogManager.GetCurrentClassLogger();
+
             var size = random.Next(10, 100);
             Width += size;
             Height += size;
-           
 
             Speed = random.Next(2, 10);
             xRatio = random.NextDouble();
@@ -59,6 +67,8 @@
 
             Color = GetRandomColor();
         }
+
+        internal event EventHandler<ShapesKickedEventArgs> ShapesKicked;
 
         [DataMember, XmlIgnore]
         public Color Color { get; set; }
@@ -127,6 +137,13 @@
             }
         }
 
+        public void Beep()
+        {
+            //SystemSounds.Beep.Play();
+
+            logger.Info("Yo!");
+        }
+
         public void ChangeSpeed(int speedStep)
         {
             if (Speed + speedStep >= MinSpeed && Speed + speedStep <= MaxSpeed)
@@ -152,45 +169,6 @@
                 }
             }
         }
-        public void ChangeSpeedXY(int xSpeed, int ySpeed)
-        {
-
-            //if (XSpeed >= 0)
-            //{
-            //    XSpeed = (XSpeed - xSpeed) / 2;
-            //}
-            //else
-            //{
-            //    XSpeed = -(XSpeed - xSpeed) / 2;
-            //}
-
-            //if (YSpeed >= 0)
-            //{
-            //    YSpeed = (YSpeed - ySpeed) / 2;
-            //}
-            //else
-            //{
-            //    YSpeed = -(YSpeed - ySpeed) / 2;
-            //}
-
-            if (XSpeed >= 0)
-            {
-                XSpeed = -xSpeed;
-            }
-            else
-            {
-                XSpeed = xSpeed;
-            }
-
-            if (YSpeed >= 0)
-            {
-                YSpeed = -ySpeed;
-            }
-            else
-            {
-                YSpeed = ySpeed;
-            }
-        }
 
         public abstract void Draw(Graphics graphics);
 
@@ -214,11 +192,22 @@
             return new Rectangle(XCoord + x, YCoord + x, Width, Height);
         }
 
+        public bool IntersectsWith(Shape shape)
+        {
+            var result = GetShapeBounds().IntersectsWith(shape.GetShapeBounds());
+            if (result)
+            {
+                var args = new ShapesKickedEventArgs(this, shape);
+                OnShapesKicked(args);
+            }
+
+            return result;
+        }
+
         public abstract void Move(PictureBox pictureBox);
 
         public void ReverseDirection()
         {
-            //Speed = -shape.Speed;
             XSpeed = -XSpeed;
             YSpeed = -YSpeed;
         }
@@ -234,6 +223,12 @@
 
         void IMovable.Test()
         {
+        }
+
+        internal void OnShapesKicked(ShapesKickedEventArgs e)
+        {
+            var temp = Volatile.Read(ref ShapesKicked);
+            temp?.Invoke(this, e);
         }
     }
 }

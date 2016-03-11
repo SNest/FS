@@ -1,8 +1,8 @@
-﻿using System;
-using System.Windows.Forms;
-
-namespace FlyingShapes
+﻿namespace FlyingShapes
 {
+    using System;
+    using System.Windows.Forms;
+
     public static class Program
     {
         [STAThread]

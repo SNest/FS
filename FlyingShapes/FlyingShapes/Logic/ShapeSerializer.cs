@@ -1,13 +1,13 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Runtime.Serialization.Json;
-using System.Xml.Serialization;
-
-using FlyingShapes.Models;
-
-namespace FlyingShapes.Logic
+﻿namespace FlyingShapes.Logic
 {
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Runtime.Serialization.Formatters.Binary;
+    using System.Runtime.Serialization.Json;
+    using System.Xml.Serialization;
+
+    using FlyingShapes.Models;
+
     public static class ShapeSerializer
     {
         private static readonly BinaryFormatter BinaryFormatter = new BinaryFormatter();

@@ -1,10 +1,10 @@
-﻿using System;
-using System.Drawing;
-using System.Runtime.Serialization;
-using System.Windows.Forms;
-
-namespace FlyingShapes.Models
+﻿namespace FlyingShapes.Models
 {
+    using System;
+    using System.Drawing;
+    using System.Runtime.Serialization;
+    using System.Windows.Forms;
+
     [Serializable, DataContract]
     public class Square : Shape
     {

@@ -38,6 +38,21 @@
             ShapeList.Add(shape);
         }
 
+        public void AddKickEvent()
+        { 
+            ShapeList.ForEach(AddKickEvent);
+        }
+
+        public void AddKickEvent(Shape shape)
+        {
+            shape.ShapesKicked += ShapeBeep;
+        }
+
+        public void AddKickEvent(List<Shape> shapes)
+        {
+            shapes.ForEach(shape => shape.ShapesKicked += ShapeBeep);
+        }
+
         public void ChangeShapesSpeed(int speedStep)
         {
             foreach (var shape in ShapeList)
@@ -95,22 +110,21 @@
             return allfigures.ToString();
         }
 
-        public void MoveShapes(PictureBox pictureBox)
+        public void MoveShapes(object obj)
         {
+            var pictureBox = (PictureBox)obj;
+
             foreach (var shape1 in ShapeList)
             {
                 foreach (var shape2 in ShapeList)
                 {
                     var isEqual = ReferenceEquals(shape1, shape2);
-                    bool isIntersects = shape1.GetShapeBounds().IntersectsWith(shape2.GetShapeBounds());
+                    var isIntersects = shape1.IntersectsWith(shape2);
 
                     if (!isEqual && isIntersects)
                     {
                         shape1.ReverseDirection();
                         shape1.Move(pictureBox);
-                        shape1.ChangeSpeedXY(shape2.XSpeed, shape2.YSpeed);
-                        //shape2.ChangeSpeedXY(shape1.XSpeed, shape1.YSpeed);
-                        
                         break;
                     }
                 }
@@ -122,6 +136,11 @@
         public void RemoveShape(Shape shape)
         {
             ShapeList.Remove(shape);
+        }
+
+        public void RemoveShapeKickEvent(Shape shape)
+        {
+            shape.ShapesKicked -= ShapeBeep;
         }
 
         public void RemoveShapes()
@@ -151,10 +170,15 @@
             GetShapes(type).ForEach(shape => shape.IsFilled = false);
         }
 
-        private void SetRandomPosition(Shape shape, PictureBox pictureBox)
+        private void SetRandomPosition(Shape shape, Control pictureBox)
         {
-            shape.XCoord = random.Next(pictureBox.Width - shape.Width);
-            shape.YCoord = random.Next(pictureBox.Height - shape.Height);
+            shape.XCoord = random.Next(10, pictureBox.Width - (shape.Width + 10));
+            shape.YCoord = random.Next(10, pictureBox.Height - (shape.Height + 10));
+        }
+
+        private void ShapeBeep(object sender, ShapesKickedEventArgs e)
+        {
+            e.Shape1.Beep();
         }
     }
 }

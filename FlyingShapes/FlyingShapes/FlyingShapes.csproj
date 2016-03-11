@@ -54,6 +54,7 @@
     <Compile Include="Interfaces\IDrawable.cs" />
     <Compile Include="Interfaces\IMovable.cs" />
     <Compile Include="Logic\ShapeManager.cs" />
+    <Compile Include="Logic\ShapesKickedEventArgs.cs" />
     <Compile Include="Models\Circle.cs" />
     <Compile Include="Models\Shape.cs" />
     <Compile Include="Models\Square.cs" />
